@@ -1,0 +1,17 @@
+// Get the data
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+// Create an empty array for the cities
+const cities = [];
+
+// Promises return as a promise
+// const prom = fetch(endpoint);
+// console.clear();
+// console.log(prom);
+
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => cities.push(...data))
+
+console.clear();
+console.log(cities);
